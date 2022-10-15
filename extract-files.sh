@@ -61,7 +61,7 @@ function blob_fixup() {
             sed -i "s|megviifacepp_0_5_2_model|facedetectpp_0_5_2_model|g" "${2}"
             ;;
         vendor/lib64/camera/components/com.qti.node.watermark.so)
-            "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
+            grep -q "libpiex_shim.so" "${2}" || "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
             ;;
          vendor/etc/init/vendor.qti.rmt_storage.rc)
             sed -i "/shutdown critical/ i\  group system wakelock" "${2}"
