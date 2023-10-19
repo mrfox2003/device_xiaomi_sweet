@@ -102,12 +102,6 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
 DEVICE_MANIFEST_FILE += hardware/qcom-caf/sm8150/media/conf_files/sm6150/c2_manifest.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
-DEVICE_MANIFEST_SKUS += sweet
-DEVICE_MANIFEST_SWEET_FILES := \
-    $(DEVICE_MANIFEST_FILE) \
-    $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
-
-
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
 

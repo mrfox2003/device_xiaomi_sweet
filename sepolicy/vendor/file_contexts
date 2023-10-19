@@ -92,3 +92,6 @@
 
 # UFS read_ahead_kb
 /sys/devices/platform/soc/1d84000.ufshc/host0/target0:0:0/0:0:0:0/block/sda/queue/read_ahead_kb u:object_r:vendor_sysfs_mmc_host:s0
+
+# NFC
+/vendor/bin/hw/android\.hardware\.nfc-service\.nxp                u:object_r:hal_nfc_default_exec:s0

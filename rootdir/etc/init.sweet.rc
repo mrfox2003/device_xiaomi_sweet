@@ -1,12 +1,11 @@
 on property:ro.boot.product.vendor.sku=sweet
     enable vendor.nfc_hal_service
 
-service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
     override
-    class hal
+    class early_hal
     user nfc
-    group nfc
-    writepid /dev/cpuset/system-background/tasks
+    group nfc drmrpc system
     disabled
 
 service citsensor-hal-1-1  /vendor/bin/hw/vendor.xiaomi.hardware.citsensorservice@1.1-service
