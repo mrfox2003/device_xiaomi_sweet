@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2024 The LineageOS Project
+# Copyright (C) 2021-2024 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -73,7 +73,8 @@ PRODUCT_PACKAGES += \
     libaudio-resampler
 
 PRODUCT_PACKAGES += \
-    libtinycompress
+    libtinycompress \
+    sku_sweet_audio_symlink
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
@@ -358,13 +359,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_sweet/android.hardware.nfc.ese.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_sweet/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_sweet/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_sweet/android.hardware.nfc.uicc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_sweet/android.hardware.nfc.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_sweet/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_sweet/com.nxp.mifare.xml
+    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_sweet/android.hardware.nfc.ese.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_sweet/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_sweet/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_sweet/android.hardware.nfc.uicc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_sweet/android.hardware.nfc.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_sweet/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/sku_sweet/com.nxp.mifare.xml
 
 # Network
 PRODUCT_PACKAGES += \
@@ -538,6 +539,19 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version.xml
     
+# System properties
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/properties/build_GLOBAL.prop:$(TARGET_COPY_OUT_ODM)/etc/build_GLOBAL.prop \
+    $(LOCAL_PATH)/properties/build_INDIA-pro.prop:$(TARGET_COPY_OUT_ODM)/etc/build_INDIA-pro.prop \
+    $(LOCAL_PATH)/properties/build_INDIA-std.prop:$(TARGET_COPY_OUT_ODM)/etc/build_INDIA-std.prop \
+    $(LOCAL_PATH)/properties/build_JAPAN.prop:$(TARGET_COPY_OUT_ODM)/etc/build_JAPAN.prop
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/properties/build_GLOBAL.prop:$(TARGET_COPY_OUT_RECOVERY)/root/build_GLOBAL.prop \
+    $(LOCAL_PATH)/properties/build_INDIA-pro.prop:$(TARGET_COPY_OUT_RECOVERY)/root/build_INDIA-pro.prop \
+    $(LOCAL_PATH)/properties/build_INDIA-std.prop:$(TARGET_COPY_OUT_RECOVERY)/root/build_INDIA-std.prop \
+    $(LOCAL_PATH)/properties/build_JAPAN.prop:$(TARGET_COPY_OUT_RECOVERY)/root/build_JAPAN.prop
+
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager

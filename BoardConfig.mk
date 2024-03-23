@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020-2023 The LineageOS Project
+# Copyright (C) 2021-2024 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -102,13 +102,11 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
 DEVICE_MANIFEST_FILE += hardware/qcom-caf/sm8150/media/conf_files/sm6150/c2_manifest.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 
-ODM_MANIFEST_SKUS += sweet
-ODM_MANIFEST_SWEET_FILES := \
+DEVICE_MANIFEST_SKUS += sweet
+DEVICE_MANIFEST_SWEET_FILES := \
+    $(DEVICE_MANIFEST_FILE) \
     $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_sweet
-TARGET_RECOVERY_DEVICE_MODULES := libinit_sweet
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
